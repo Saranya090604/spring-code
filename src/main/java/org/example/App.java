@@ -5,9 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main( String[] args ) {
-//        ApplicationContext context = new ClassPathXmlApplicationContext();
+        ApplicationContext context = new ClassPathXmlApplicationContext("springconfig.xml");
         System.out.println( "Hello World!" );
-        Student student = new Student();
+        Student student = context.getBean("st1", Student.class);
         student.show();
     }
 }
