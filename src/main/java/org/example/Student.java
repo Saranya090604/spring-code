@@ -1,11 +1,20 @@
 package org.example;
 
 public class Student {
-    public Student(){
-       System.out.println("student is created..");
+    public Student() {
+        System.out.println("student is created..");
     }
+
     private int age;
-    Pen pen = new Pen();
+    private Pen pen;
+
+    public Pen getPen() {
+        return pen;
+    }
+
+    public void setPen(Pen pen) {
+        this.pen = pen;
+    }
 
     public int getAge() {
         return age;
@@ -15,10 +24,16 @@ public class Student {
         this.age = age;
     }
 
-    public void show(){
-        System.out.println("Age: "+ age);
+    public void show() {
+        System.out.println("Age: " + age);
     }
-    public void writeExam(){
-        pen.write();
+
+    // New method to fix the error
+    public void pen() {
+        if (pen != null) {
+            pen.write();
+        } else {
+            System.out.println("Pen is created..");
+        }
     }
 }
